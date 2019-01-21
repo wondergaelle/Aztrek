@@ -49,6 +49,26 @@ getHeader($pays["libelle"], $pays["description"]);
         <h2 class="title-noir">Nos voyages</h2>
     </div>
 
+
+    <main class="main-pays">
+        <div class="row mx-auto">
+            <div class="col-sm-6 col-md-8  col-lg-12 mx-auto img-circuit">
+                <h4 class="title-pays"><?= $pays["libelle"]; ?></h4>
+            </div>
+
+
+            <div class="col-sm-6 col-md-8  col-lg-6 mx-auto img-circuit">
+                <img src="images/<?= $pays["photo"]; ?>" alt=<?= $pays["titre"]; ?>
+            </div>
+
+            <div class=" col-sm-6 col-md-8 col-lg-6 detail-day">
+                <?= $pays["description"]; ?></p>
+                <p class="prix-date">A partir de 2060€</p>
+                <!-- <p class="prix-date">10 jours</p> -->
+                <a href="sejour.html" class="btn-orange" class="mx-auto">découvrir les voyages</a>
+            </div>
+        </div>
+
     <div class="container-fluid .d-block">
         <div class="row">
             <div class="card-deck">

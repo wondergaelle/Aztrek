@@ -4,7 +4,7 @@ require_once "functions.php";
 
 $id = $_GET["id"];
 $pays = getOneEntity("pays", $id);
-$sejours = getAllSejoursByPays($id);
+//$sejours = getAllSejoursByPays($id);
 
 getHeader($pays["libelle"], $pays["description"]);
 ?>

@@ -1,0 +1,140 @@
+// Typos
+
+h1 {
+    font-family: $font-title;
+    font-size: 2rem;
+    margin: 10px auto;
+
+    @media (min-width: $bp-medium) {
+        font-size: 4rem;
+    }
+
+    @media (min-width: $bp-large) {
+        font-size: 5rem;
+    }
+}
+
+.title-noir {
+    font-family: $font-default;
+    font-weight: bold;
+    font-size: 0.75rem;
+
+
+    height:1rem;
+    width:40%;
+    margin:auto;
+    text-align:center;
+    position:relative;
+    @media (min-width: $bp-medium) {
+        width:50%;
+        font-size: 2rem;
+       
+    }
+  }
+  
+  .title-noir:before{
+    content:'';
+    position:absolute;
+    left:calc(-50% - 4px);
+    top:calc(60% - 1px);
+    border-bottom:5px solid $orange;
+    width:40%;
+    @media (min-width: $bp-medium) {
+        left:calc(-50% - 4px);
+        top:calc(60% - 1px);
+        width: 40%;
+    }
+  }
+  
+  .title-noir:after{
+    content:'';
+    position:absolute;
+    right:calc(-50% - 4px);
+    top:calc(60% - 1px);
+    border-bottom:5px solid $orange;
+    width:40%;
+    @media (min-width: $bp-medium) {
+        right:calc(-50% - 5px);
+        top:calc(60% - 1px);
+    
+    }
+  }
+
+.infos p {
+    font-family: $font-default;
+    font-size: 0.5rem;
+
+    @media (min-width: $bp-medium) {
+        font-size: 1rem;
+    }
+
+    @media (min-width: $bp-large) {
+        font-size: 1.75rem;
+    }
+}
+
+h6 {
+    margin: 0 auto;
+    color: $light-gray;
+    font-size:50px;
+    font-family: 'Righteous';
+    position: absolute;
+    .overflow-clip{
+        text-overflow: clip;
+    }
+
+    @media (min-width: $bp-medium) {
+        font-size: 150px;
+    }
+
+    @media (min-width: $bp-large) {
+        font-size: 200px;
+    }
+
+    @media (min-width: $bp-xlarge) {
+        font-size: 220px;
+    }
+
+}
+
+.overflow-clip{
+    text-overflow: clip;
+}
+
+.title-orange {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $orange;
+
+    @media (min-width: $bp-medium) {
+        font-size: 3rem;
+    }
+
+    @media (min-width: $bp-large) {
+        font-size: 4rem;
+    }
+}
+
+p {
+    font-size: 0.75rem;
+
+    @media (min-width: $bp-medium) {
+        font-size: 1.25rem;
+    }
+
+}
+
+a {
+    font-size: 0.75rem;
+
+    @media (min-width: $bp-medium) {
+        font-size: 1rem;
+    }
+
+}
+
+h2{
+    text-transform: uppercase;
+}
+
+

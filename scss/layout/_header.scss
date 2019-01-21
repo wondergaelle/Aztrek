@@ -1,0 +1,64 @@
+
+header{
+  background-attachment: fixed;
+}
+.header-top {
+
+  .bg-header {
+ 
+    display: block;
+    width: 100%;
+  }
+
+  .video video {
+    position: relative;
+    width: 100%;
+  }
+ 
+}
+
+.header-guatemala{
+  width: 100%;
+  position: relative;
+  background-size: cover no-repeat;
+  // display: block;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.logo-header-fixe {
+  position: absolute;
+  margin: 20px 0 0 20px;
+  z-index: 1;
+  width: 10%;
+
+}
+
+.infos {
+
+  position: absolute;
+  display: flex;
+  top: 15%;
+  right: 10%;
+  flex-direction: column;
+
+
+  @media(min-width: $bp-medium) {
+
+    top: 20%;
+    right: 10%;
+  }
+
+  @media (min-width: $bp-large) {
+    top: 45%;
+    right: 15%;
+  }
+
+  h1,
+  p {
+    color: white;
+  }
+
+ 
+
+}

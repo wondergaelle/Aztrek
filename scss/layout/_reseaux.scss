@@ -1,0 +1,30 @@
+
+.reseaux-photos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin: 40px auto;
+}
+
+
+.reseau .title-section {
+    min-height: 80px;
+   
+    h2 {
+        margin-top: 40px;
+    }
+    h6 {
+        margin-top: -10px;
+    }
+
+    @media(min-width: $bp-medium) {
+        min-height: 200px;
+        h2 {
+            margin-top: 80px;
+        }
+        h6 {
+            margin-top: -150px;
+        }
+    }
+}

@@ -1,0 +1,110 @@
+.equipe {
+    margin-top: 100px;
+    background: $bleu;
+
+
+    @media(min-width: $bp-large) {
+        min-height: 1500px;
+    }
+
+
+    .presentation {
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+        width: 95%;
+        text-align: center;
+        margin: auto;
+        &>h2{
+            padding: 20px auto; 
+        }
+        >p{
+            padding: 30px 30px;
+            margin: 0 auto;
+        }
+
+        .title-noir {
+            padding: 30px 0 30px 0;
+
+        }
+    }
+
+    p {
+       
+        display: flex;
+        text-align: center;
+        width: 80%;
+        text-align: center;
+        
+    }
+
+
+
+    #detail-equipe1 {
+        display:  block;  
+        position: absolute;
+        width: 50%;
+        margin-left: 40%;
+        margin-top: -30%;
+        p {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+      
+    }
+
+    .photo-equipe-1 {
+        // position: absolute;
+        width: 30%;
+        margin: 30px 0 auto 30px;
+    }
+
+  
+}
+
+
+.membres-equipe {
+    margin-top: 105px;
+    h3{
+        color: $orange;
+        font-size: 2rem;
+        margin-left: 40px;
+    }
+
+    &>.gallerie-equipe {
+
+        position: relative;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 0 auto;
+
+        .photo {
+            margin: 5px 5px;
+
+            @media(min-width: $bp-large) {
+                margin: 25px 25px;
+            }
+        }
+    }
+}
+
+.photo {
+    position: relative;
+
+    .btn-equipe {
+        position: absolute;
+        margin-left: calc(50% - 14px);
+        bottom: 25px;
+    }
+}
+
+.equipe {
+    .btn-orange {
+
+        margin-left: calc(50% - 80px);
+        bottom: 25px;
+    }
+}

@@ -1,0 +1,173 @@
+
+//// Menu 2eme Edition // 
+
+
+.nav-toggle {
+
+    display: block;
+    font-size: 0;
+    width: 40px;
+    height: 45px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: none;
+    border: none;
+    outline: none;
+    &:focus{
+      outline: 0;
+    }
+  }
+  
+  .nav-toggle span,
+  .nav-toggle::before,
+  .nav-toggle::after {
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background: $orange;
+    border-radius: 6px;
+    opacity: 1;
+    left: 0;
+    transition: .3s;
+    transform-origin:left center;
+  }
+  
+  .nav-toggle::before {
+    content: '';
+    top: 0px;
+  }
+  
+  .nav-toggle span {
+    top: 12px;
+  }
+  
+  .nav-toggle::after {
+    content: '';
+    top: 24px;
+  }
+  
+  /****** modif des 3 barres en croix *******/
+  .nav-expanded .nav-toggle::before {
+    transform: rotate(45deg);
+    top: -2px;
+    left: 5px;
+  }
+  
+  .nav-expanded .nav-toggle span {
+    width: 0%;
+    opacity: 0;
+  }
+  
+  .nav-expanded .nav-toggle::after {
+    transform: rotate(-45deg);
+    top: 26px;
+    left: 5px;
+  }
+  
+  /*----- fin de la transformation des 3 barres en croix */
+  
+  .main-nav ul {
+    display: none;
+  }
+  
+  .resp-nav {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: -100%;
+    z-index: 9998;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 65px;
+    background-color:rgba(48, 48, 48, 0.961);
+    transition: 0.3s;
+  }
+
+  
+  
+  /* a rajouter dans le javascript car n existe pas dans le html */
+  .nav-expanded .resp-nav {
+    left: 0;
+  }
+  
+  .resp-nav a {
+    display: inline-block ;
+    color: $orange;
+    margin: 10px 10px;
+    padding: .4em 1.5em;
+    font-size: 1.25em;
+    color:white;
+    text-transform: uppercase;
+    transition: .3s;
+    width: 100%;
+  }
+  
+  /* a rajouter dans le javascript car n existe pas dans le html */
+  .resp-nav a:hover {
+    background-color: rgb(122, 122, 122);
+  }
+  .resp-nav >ul{
+    max-width: auto;
+    margin: 0 auto;
+  }
+  
+  .resp-nav ul ul {
+    display: none;
+    padding-left: 2rem;
+  }
+  
+  .has-sublist a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .has-sublist>a::after{
+    content: '>';
+    margin-left: 1rem;
+    transition: .3s;
+    display: inline-block;
+  }
+  
+  .has-sublist>a.expanded::after{
+    transform: rotate(90deg);
+  }
+  
+ 
+  
+
+
+// ************** fin du code de la nav en responsive ****************//////////
+
+
+// navigation horizontale
+#nav-1 {
+
+    position: fixed;
+  
+    z-index: 1;
+ 
+
+    ul {
+       display: flex;
+        flex-direction: row;
+        width: 65%;
+        @media(min-width: $bp-medium) {
+            width: 80%;
+        }
+        @media(min-width: $bp-large) {
+            width: 90%;
+        }
+    }
+
+    li {
+            padding: 15px;
+        }
+}
+
+
+

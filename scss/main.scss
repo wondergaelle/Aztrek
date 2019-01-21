@@ -1,0 +1,38 @@
+@import
+  'abstracts/variables',
+  'abstracts/mixins';
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+@import
+  'vendors/normalize';
+
+@import
+  'base/base',
+  'base/typography';
+
+@import
+  // page accueil
+  'layout/about',
+  'layout/equipe',
+  'layout/font-face',
+  'layout/footer',
+  'layout/grid',
+  'layout/header',
+  'layout/navigation',
+  'layout/reseaux',
+  'layout/voyages',
+
+  // page sejour
+  'layout/sejour',
+  'layout/circuits',
+  'layout/pays';
+
+ 
+@import
+  'components/buttons';
+
+@import
+  'pages/home';
+
+

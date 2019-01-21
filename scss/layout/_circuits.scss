@@ -1,0 +1,93 @@
+.sejour-detail .title-section {
+    min-height: 80px;
+    margin: 20px auto;
+
+   
+    h2 {
+        margin-top: 40px;
+    }
+    h6 {
+        margin-top: -10px;
+    }
+
+    @media(min-width: $bp-medium) {
+        min-height: 200px;
+        h2 {
+            margin-top: 80px;
+        }
+        h6 {
+            margin-top: -100px;
+        }
+    }
+}
+.row .img-fluid{
+    margin: 0 auto;
+}
+
+.info-circuit{
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+    @media(min-width: $bp-medium) {
+        font-size: 1.5rem;
+    }
+    border: 2px solid $orange;
+}
+
+.niveau{
+ 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px;
+}
+
+.text-left{
+    min-height: 300px;
+    margin: 0 auto;
+}
+
+.row{
+   margin: 40px auto;
+  
+    h4{
+        margin: O auto;
+        text-align: center;
+        background-color: $bleu;
+        
+        ul.niveau{
+            margin-top: 10px;
+            display: flex;
+            margin: 10px auto 0 auto;
+            li{
+                padding: 10px auto;
+            }
+            
+        }
+    }
+    .detail-day{
+        margin:0 auto;
+        font-size: 0.50rem;
+
+       
+        @media (min-width: $bp-large) {
+            margin: 0 auto;
+            font-size: 1.15rem;
+        }
+
+        li {
+            font-size: 1rem;
+        }
+    
+    }
+}
+
+
+.reservation{
+    margin:20px auto;
+    
+}
+
+
+

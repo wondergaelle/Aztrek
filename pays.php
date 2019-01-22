@@ -4,9 +4,12 @@ require_once "functions.php";
 
 $id = $_GET["id"];
 $pays = getOneEntity("pays", $id);
-//$sejours = getAllSejoursByPays($id);
+$sejours = getAllSejoursByPays($id);
+
+//$niveau = getAllEntities("niveaux", $id)
 
 getHeader($pays["libelle"], $pays["description"]);
+
 ?>
 
 <header class="header-top">
@@ -33,6 +36,8 @@ getHeader($pays["libelle"], $pays["description"]);
 </header>
 
 
+<!--intitule du pays et description -->
+
 <main class="sejour">
 
     <section class="presentation-sejour">
@@ -44,52 +49,54 @@ getHeader($pays["libelle"], $pays["description"]);
         <p><?= $pays["description"]; ?></p>
     </section>
 
+    <!--    liste des sejours proposés par pays-->
+
     <div class="title-section">
         <h6>Découvrez</h6>
         <h2 class="title-noir">Nos voyages</h2>
     </div>
-
-
-    <main class="main-pays">
-        <div class="row mx-auto">
-            <div class="col-sm-6 col-md-8  col-lg-12 mx-auto img-circuit">
-                <h4 class="title-pays"><?= $pays["libelle"]; ?></h4>
-            </div>
-
-
-            <div class="col-sm-6 col-md-8  col-lg-6 mx-auto img-circuit">
-                <img src="images/<?= $pays["photo"]; ?>" alt=<?= $pays["titre"]; ?>
-            </div>
-
-            <div class=" col-sm-6 col-md-8 col-lg-6 detail-day">
-                <?= $pays["description"]; ?></p>
-                <p class="prix-date">A partir de 2060€</p>
-                <!-- <p class="prix-date">10 jours</p> -->
-                <a href="sejour.html" class="btn-orange" class="mx-auto">découvrir les voyages</a>
-            </div>
-        </div>
-
     <div class="container-fluid .d-block">
         <div class="row">
             <div class="card-deck">
 
-                <div class="card">
-                    <h4 class="card-title "><?= $pays["libelle"]; ?></h4>
-                    <img src="images/<?= $pays["photo"]; ?>" alt=<?= $pays["titre"]; ?>
-                    <div class="card-block">
-                        <p class="card-text ">
-                        </p><ul class="list-group text-left">
-                        <?= $pays["description"]; ?>
-                        </ul>
-                        <ul class="card-text card-footer niveau">
-                            <li><i class="fas fa-user-alt"></i>Accompagné</li>
-                            <li><i class="fas fa-signal"></i>Niveau difficile</li>
-                            <li><i class="fas fa-calendar-alt"></i>1O jours</li>
-                        </ul>
-                        <p></p>
-                        <a href="circuit.html" class="btn-orange">découvrir le voyage</a>
+                <?php foreach ($sejours as $sejour) : ?>
+                    <div class="card">
+                        <h4 class="card-title "><?= $sejour["libelle"]; ?></h4>
+
+                        <a href="circuit.php"><img class="card-img-top" src="images/<?= $sejour["photo"]; ?>"
+                                                   alt=<?= $sejour["libelle"]; ?>></a>
+                        <div class="card-block">
+                            <p class="card-text ">
+                            <ul class="list-group text-left">
+                                <?= $sejour["description"]; ?>
+                            </ul>
+                            </p>
+                            <ul class="card-text card-footer niveau">
+                                <li><i class="fas fa-user-alt"></i><?= $sejour["accompany"]; ?></li>
+
+
+                                <li> <i class="fas fa-signal"></i>
+
+                                    <?php $niveaux = 3; ?>
+                                    <?php for ($i = 1; $i <= 5; $i++) : ?>
+                                        <?php if ($i <= $niveaux) : ?>
+                                            <i class="fa fa-star"></i>
+                                        <?php else: ?>
+                                            <i class="fa fa-star-o"></i>
+                                        <?php endif; ?>
+                                    <?php endfor; ?>
+                               </li>
+
+
+
+<!--                                <li><i class="fas fa-signal"></i>Niveau --><?//= $sejour["niveau"]; ?><!--</li>-->
+                                <li><i class="fas fa-calendar-alt"></i><?= $sejour["days"]; ?> jours</li>
+                            </ul>
+                            </p>
+                            <a href="circuit.php" class="btn-orange" class="mx-auto">découvrir le voyage</a>
+                        </div>
                     </div>
-                </div>
+                <?php endforeach; ?>
 
             </div>
         </div>

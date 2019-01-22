@@ -9,6 +9,14 @@ function debug($var, bool $die = true) {
         die;
     }
 }
+//permet de laisser la session utilisateur ouverte des lors qu'il s'est connecté
+function getConnectingUser() {
+    session_start();
+    if(isset($_SESSION["id"])) {
+        return getOneEntity("utilisateur", $_SESSION["id"]);
+    }
+
+}
 
 
 /**
@@ -27,6 +35,8 @@ function getMenu() {
 function getFooter() {
     require_once 'layout/footer.php';
 }
+
+
 
 function isActive(string $url, bool $endWith = false): bool {
     if (

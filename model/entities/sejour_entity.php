@@ -1,24 +1,22 @@
 <?php
 
 
-// Requete pour les sejours
+// Requete pour les circuits
 
-function getAllSejourByPays (int $id): array {
+function getAllSejoursByPays (int $id) {
     global $connection;
 
     $query = "
-    
-    SELECT 
-    sejours.*,
-    
+
+    SELECT
+      sejours.*,
+      pays.libelle AS pays,
+      niveaux.libelle AS niveau
     FROM sejours
     INNER JOIN pays ON sejours.pays_id = pays.id
-    INNER JOIN circuit ON sejours.id = c.destinations_id
-    INNER JOIN level ON sejours.level_id = level.id
-    WHERE sejours.pays_id = :id
-    GROUP BY sejours.id  
-    
-    
+    INNER JOIN niveaux ON sejours.niveaux_id = niveaux.id
+    WHERE pays.id = :id
+    ORDER BY sejours.libelle
     ";
 
     $stmt = $connection->prepare($query);
@@ -27,3 +25,5 @@ function getAllSejourByPays (int $id): array {
 
     return $stmt->fetchAll();
 }
+
+

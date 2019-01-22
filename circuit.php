@@ -47,7 +47,7 @@
                     <li class="has-sublist"><a href="#">Les pays</a>
                         <ul>
                                 <li><a href="sejour.html">Nos destinations</a></li>
-                                <li><a href="circuit.html">Mexique</a></li>
+                                <li><a href="circuit.php">Mexique</a></li>
                                 <li><a href="sejour.html">Costa-Rica</a></li>
                                 <li><a href="sejour.html">Salavador</a></li>
                                 <li><a href="sejour.html">Honduras</a></li>

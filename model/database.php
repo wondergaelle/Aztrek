@@ -12,10 +12,19 @@ try {
     echo "Erreur de connexion à la base de données";
     die;
 }
+// fichiers de fonctions générales ///
 
+///*********///////
+
+
+
+// Chargement des fonctions dans le dossier "entities"
+$files = glob(__DIR__ . "/entities/*.php");
+foreach ($files as $filepath) {
+    require_once $filepath;
+}
 
 // fonction générale à utiliser pour toutes les tables assez simples
-
 function getAllEntities(string $table){
     global $connection;
 

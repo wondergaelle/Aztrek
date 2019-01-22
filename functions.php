@@ -11,11 +11,12 @@ function debug($var, bool $die = true) {
 }
 //permet de laisser la session utilisateur ouverte des lors qu'il s'est connecté
 function getConnectingUser() {
-    session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
     if(isset($_SESSION["id"])) {
         return getOneEntity("utilisateur", $_SESSION["id"]);
     }
-
 }
 
 

@@ -16,6 +16,7 @@ getHeader("Accueil", "sejour");
     <img src="./images/logo-header.png" alt="" class="logo-header-fixe">
 
 
+
     <div class="video">
         <video autoplay muted loop src="./images/aztrek_site.mp4"></video>
     </div>

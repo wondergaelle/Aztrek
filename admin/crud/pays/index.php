@@ -1,7 +1,7 @@
 <?php
 require_once '../../../model/database.php';
 
-$recipes = getAllRecettes();
+$pays = getAllPays();
 
 $error_msg = null;
 if (isset($_GET['errcode'])) {
@@ -46,22 +46,22 @@ require_once '../../layout/header.php';
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($recipes as $recipe) : ?>
+        <?php foreach ($pays as $pays) : ?>
             <tr>
-                <td><?php echo $recipe['titre']; ?></td>
+                <td><?php echo $pays['titre']; ?></td>
                 <td>
-                    <img src="../../../uploads/<?php echo $recipe['image']; ?>" class="img-thumbnail">
+                    <img src="../../../uploads/<?php echo $pays['image']; ?>" class="img-thumbnail">
                 </td>
-                <td><?php echo $recipe['sejours']; ?></td>
-                <td><?php echo $recipe['pseudo']; ?></td>
-                <td><?php echo $recipe['date_creation_format']; ?></td>
+                <td><?php echo $pays['circuits']; ?></td>
+                <td><?php echo $pays['pseudo']; ?></td>
+                <td><?php echo $pays['date_creation_format']; ?></td>
                 <td class="actions">
-                    <a href="update.php?id=<?php echo $recipe['id']; ?>" class="btn btn-warning">
+                    <a href="update.php?id=<?php echo $pays['id']; ?>" class="btn btn-warning">
                         <i class="fa fa-edit"></i>
                         Modifier
                     </a>
                     <form action="delete_query.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $recipe['id']; ?>">
+                        <input type="hidden" name="id" value="<?php echo $pays['id']; ?>">
                         <button type="submit" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                             Supprimer

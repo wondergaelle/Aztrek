@@ -6,7 +6,7 @@ $id = $_GET["id"];
 $pays = getOneEntity("pays", $id);
 $sejours = getAllSejoursByPays($id);
 
-//$niveau = getAllEntities("niveaux", $id)
+
 
 getHeader($pays["libelle"], $pays["description"]);
 
@@ -63,8 +63,9 @@ getHeader($pays["libelle"], $pays["description"]);
                     <div class="card">
                         <h4 class="card-title "><?= $sejour["libelle"]; ?></h4>
 
-                        <a href="circuit.php"><img class="card-img-top" src="images/<?= $sejour["photo"]; ?>"
-                                                   alt=<?= $sejour["libelle"]; ?>></a>
+                        <a href="circuit.php?id=<?= $sejour["id"]; ?>">
+                            <img class="card-img-top" src="images/<?= $sejour["photo"]; ?>" alt=<?= $sejour["libelle"]; ?>>
+                        </a>
                         <div class="card-block">
                             <p class="card-text ">
                             <ul class="list-group text-left">
@@ -93,7 +94,7 @@ getHeader($pays["libelle"], $pays["description"]);
                                 <li><i class="fas fa-calendar-alt"></i><?= $sejour["days"]; ?> jours</li>
                             </ul>
                             </p>
-                            <a href="circuit.php" class="btn-orange" class="mx-auto">découvrir le voyage</a>
+                            <a href="circuit.php?id=<?= $sejour["id"]; ?>" class="btn-orange">découvrir le voyage</a>
                         </div>
                     </div>
                 <?php endforeach; ?>

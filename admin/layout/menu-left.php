@@ -15,7 +15,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo isActive("/crud/sejours/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/categorie/">
+                <a class="nav-link <?php echo isActive("/crud/circuits/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/categorie/">
                     <i class="fa fa-book"></i>
                     Catégories
                 </a>

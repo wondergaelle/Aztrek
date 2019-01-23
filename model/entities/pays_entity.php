@@ -15,16 +15,17 @@ function insertPays(string $libelle, string $description, string $image)
     $stmt->execute();
 }
 
-// Pour modifier la sejours existante
+// Pour modifier les pays existants
 
 function updatePays(int $id, string $libelle)
 {
     global $connection;
 
-    $query = " UPDATE sejours SET libelle = :libelle WHERE id = :id";
+    $query = " UPDATE libelle, description, photo SET :libelle, :description, :image WHERE id = :id";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":id", $id);
-    $stmt->bindParam(":libelle", $libelle);
+    $stmt->bindParam(":description", $description);
+    $stmt->bindParam(":image", $image);
     $stmt->execute();
 }

@@ -10,7 +10,7 @@ $liste_pays = getAllEntities("pays");
 ?>
 <nav class="main-nav">
     <ul>
-        <li><a href="#">Accueil</a></li>
+        <li><a href="<?= SITE_URL ?>">Accueil</a></li>
         <li class="has-sublist"><a href="#">Les pays</a>
 
             <ul>

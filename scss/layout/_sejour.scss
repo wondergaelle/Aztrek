@@ -19,7 +19,7 @@ header.guatemala {
     @media(min-width: $bp-medium) {
         min-height: 200px;
         h2 {
-            margin-top: 80px;
+            margin-top: 100px;
         }
         h6 {
             margin-top: -100px;
@@ -28,14 +28,15 @@ header.guatemala {
 }
 
 .presentation-sejour{
-    min-height: 400px;
+    min-height: 300px;
        background-color: $bleu;
+    margin: 20px auto;
        .title-section{
-           margin-top: 40px;
-           padding: 40px auto;
+           margin-top: 60px;
+           padding:0 auto;
        }
        h2{
-           margin: 10px auto 20px auto;
+           margin: 10px auto 10px auto;
            padding: 40px 0;
        }
        p{
@@ -43,8 +44,9 @@ header.guatemala {
            width: 70%;
            text-align: center;
            justify-content: center;
-           margin: 40px auto;
-           padding: 30px 0 ;
+           margin: 0 auto;
+
+
        }
    }
 

@@ -4,7 +4,7 @@ require_once '../../security.php';
 require_once '../../../model/database.php';
 
 $id = $_POST['id'];
-$photo = getPhoto($id);
+$image = getImage($id);
 
 $libelle = $_POST['titre'];
 $description = $_POST['description'];
@@ -21,6 +21,6 @@ if ($_FILES["image"]["error"] == 0) {
     $filename = $photo["image"];
 }
 
-updatePhoto($id, $titre, $filename, $description, /*$categorie_id,*/ $tag_ids);
+updatePhoto($id, $libelle, $filename, $description, $categorie_id,/ $tag_ids);
 
 header('Location: index.php');

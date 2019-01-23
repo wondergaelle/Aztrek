@@ -19,7 +19,7 @@ if (isset($_GET['errcode'])) {
 require_once '../../layout/header.php';
 ?>
 
-<h1>Gestion des catégories</h1>
+<h1>Gestion des séjours</h1>
 
 <a href="create.php" class="btn btn-primary">
     <i class="fa fa-plus"></i>
@@ -45,14 +45,14 @@ require_once '../../layout/header.php';
     <tbody>
         <?php foreach ($sejours as $sejour) : ?>
             <tr>
-                <td><?php echo $sejour['libelle']; ?></td>
+                <td><?php echo $sejours['libelle']; ?></td>
                 <td class="actions">
-                    <a href="update.php?id=<?php echo $sejour['id']; ?>" class="btn btn-warning">
+                    <a href="update.php?id=<?php echo $sejours['id']; ?>" class="btn btn-warning">
                         <i class="fa fa-edit"></i>
                         Modifier
                     </a>
                     <form action="delete_query.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $sejour['id']; ?>">
+                        <input type="hidden" name="id" value="<?php echo $sejours['id']; ?>">
                         <button type="submit" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                             Supprimer

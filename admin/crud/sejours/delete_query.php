@@ -5,7 +5,7 @@ require_once '../../../model/database.php';
 $id = $_POST['id'];
 
 // fonction cree dans database
-$error = deleteEntity("sejours", $id);
+$error = deleteEntity("sejour", $id);
 
 if ($error) {
     header('Location: index.php?errcode=' . $error->getCode());

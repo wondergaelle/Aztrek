@@ -74,19 +74,18 @@ getHeader($pays["libelle"], $pays["description"]);
                             </p>
                             <ul class="card-text card-footer niveau">
                                 <li><i class="fas fa-user-alt"></i><?= $sejour["accompany"]; ?></li>
+                                <ul class="niveau">
 
+                                    <li>Niveau
+                                        <?php for ($i = 1; $i <= 3; $i++) : ?>
+                                            <?php if ($i <= $sejour["niveau"]) : ?>
+                                                <i class="fa fa-star"></i>
+                                            <?php else: ?>
+                                                <i class="far fa-star"></i>
+                                            <?php endif; ?>
+                                        <?php endfor; ?></li>
 
-                                <li> <i class="fas fa-signal"></i>
-
-                                    <?php $niveaux = 3; ?>
-                                    <?php for ($i = 1; $i <= 5; $i++) : ?>
-                                        <?php if ($i <= $niveaux) : ?>
-                                            <i class="fa fa-star"></i>
-                                        <?php else: ?>
-                                            <i class="fa fa-star-o"></i>
-                                        <?php endif; ?>
-                                    <?php endfor; ?>
-                               </li>
+                                </ul>
 
 
 

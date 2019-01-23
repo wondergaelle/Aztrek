@@ -1,6 +1,6 @@
 <?php
 
-//requete pour les circuits
+//requete pour les sejours
 
 
 
@@ -15,7 +15,7 @@ function getAllCircuitsBySejours (int $id)
       sejours.libelle AS sejour
     FROM circuits
     INNER JOIN sejours ON circuits.sejours_id = sejours.id
-    INNER JOIN niveaux ON circuits.niveaux_id = niveaux.id
+    INNER JOIN niveaux ON sejours.niveaux_id = niveaux.id
     WHERE circuits.sejours_id = :id
     GROUP BY circuits.id
     ";

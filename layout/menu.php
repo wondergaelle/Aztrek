@@ -11,10 +11,6 @@ $liste_pays = getAllEntities("pays");
 <nav class="main-nav">
     <ul>
         <li><a href="#">Accueil</a></li>
-        <li> <a href="<?php echo SITE_ADMIN; ?>logout.php" class="dropdown-item">
-                <i class="fa fa-sign-out"></i>
-                Déconnexion
-            </a></li>
         <li class="has-sublist"><a href="#">Les pays</a>
 
             <ul>
@@ -26,6 +22,14 @@ $liste_pays = getAllEntities("pays");
                 </li>
             </ul>
         </li>
+        <?php if (isset($utilisateur)) : ?>
+            <li><a href="#"><i class="fa fa-user"></i> <?= $utilisateur["email"]; ?></a></li>
+            <li><a href="<?= SITE_ADMIN . "logout.php"; ?>"><i class="fa fa-sign-out"></i> Déconnexion</a></li>
+        <?php else: ?>
+            <li><a href="<?= SITE_ADMIN; ?>"><i class="fa fa-sign-in"></i> Log in</a></li>
+            <li><a href="<?= SITE_URL . "create_account.php"; ?>"><i class="fa fa-user-plus" ></i> Créer votre compte</a></li>
+        <?php endif; ?>
+
         <li><a href="#">les séjours</a></li>
         <li><a href="#">les accompagnateurs</a></li>
         <li><a href="#">guide pratique</a></li>

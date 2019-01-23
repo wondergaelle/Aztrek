@@ -8,9 +8,11 @@ function getAllDepartsByCircuit(int $id) {
 
     SELECT
       depart.*,
-      circuits.libelle AS circuit
-    FROM circuits
-    INNER JOIN depart ON depart.circuits_id = circuits.id
+      sejours.libelle AS sejour,
+      sejours.days AS duree,
+      DATE_FORMAT(depart.date_depart, '%d-%m-%Y') AS date_depart
+    FROM sejours
+    INNER JOIN depart ON depart.circuits_id = sejours.id
     
     WHERE depart.circuits_id = :id
     GROUP BY depart.id

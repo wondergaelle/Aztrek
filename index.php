@@ -5,7 +5,7 @@ require_once "model/database.php";
 
 require_once "functions.php";
 
-//le get header suivant perrmet de nommer le lien en fonction de la page sr laquelle on se trouve
+//le get header suivant permet de nommer le lien en fonction de la page sr laquelle on se trouve
 
 getHeader("Accueil", "sejour");
 

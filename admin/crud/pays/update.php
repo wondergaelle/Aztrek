@@ -3,7 +3,7 @@ require_once '../../../model/database.php';
 
 $id = $_GET['id'];
 $photo = getEntity("pays", $id);
-$liste_categories = getAllEntities("circuits");
+$liste_categories = getAllEntities("circ");
 $liste_tags = getAllEntities("tag");
 
 $photo_liste_tags = getAllTagsByPhoto($id);
@@ -36,10 +36,10 @@ require_once '../../layout/header.php';
     <div class="form-group">
         <label>Catégorie</label>
         <select name="categorie_id" class="form-control">
-            <?php foreach ($liste_categories as $categorie) : ?>
+            <?php foreach ($liste_sejour as $sejour) : ?>
                 <?php $selected = ($categorie["id"] == $photo["categorie_id"]) ? "selected" : ""; ?>
-                <option value="<?php echo $categorie["id"]; ?>" <?php echo $selected; ?>>
-                    <?php echo $categorie["titre"]; ?>
+                <option value="<?php echo $sejour["id"]; ?>" <?php echo $selected; ?>>
+                    <?php echo $sejour["titre"]; ?>
                 </option>
             <?php endforeach; ?>
         </select>

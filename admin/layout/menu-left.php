@@ -9,27 +9,21 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo isActive("/crud/pays/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/recette/">
+                <a class="nav-link <?php echo isActive("/crud/pays/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/pays/">
                     <i class="fa fa-cutlery"></i>
-                    Recettes
+                    Pays
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo isActive("/crud/circuits/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/categorie/">
+                <a class="nav-link <?php echo isActive("/crud/sejours/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/sejours/">
                     <i class="fa fa-book"></i>
-                    Catégories
+                    Séjours
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-tags"></i>
-                    Tags
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-comments"></i>
-                    Commentaires
+                <a class="nav-link <?php echo isActive("/crud/circuits/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/circuits/">
+                    <i class="fa fa-book"></i>
+                    Circuits
                 </a>
             </li>
         </ul>

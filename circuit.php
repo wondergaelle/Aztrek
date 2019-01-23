@@ -43,12 +43,12 @@ getHeader($sejour["libelle"], $sejour["description"]);
     <section class="info-circuit col-sm-4 col-md-10 col-lg-10">
         <ul class="niveau">
             <li><?= $sejour["accompany"]; ?></li>
-            <li>Niveau <?php $niveaux = 3; ?>
-                <?php for ($i = 1; $i <= 5; $i++) : ?>
-                    <?php if ($i <= $niveaux) : ?>
+            <li>Niveau
+                <?php for ($i = 1; $i <= 3; $i++) : ?>
+                    <?php if ($i <= $sejour["niveau"]) : ?>
                         <i class="fa fa-star"></i>
                     <?php else: ?>
-                        <i class="fa fa-star-o"></i>
+                        <i class="far fa-star"></i>
                     <?php endif; ?>
                 <?php endfor; ?></li>
             <li><i class="fas fa-calendar-alt"></i><?= $sejour["days"]; ?> jours</li>
@@ -102,22 +102,21 @@ getHeader($sejour["libelle"], $sejour["description"]);
             <tbody>
             <?php foreach ($departs as $depart) : ?>
             <tr>
-                <td><?= $sejour["libelle"]; ?></td>
+                <td><?= $depart["sejour"]; ?></td>
                 <td><?= $depart["date_depart"]; ?></td>
                 <td><?= $depart["price"]; ?> €</td>
-                <td><?= $sejours["duree"]; ?></td>
+                <td><?= $depart["duree"]; ?></td>
                 <td><?= $depart["nb_place"]; ?></td>
                 <td><a href="#" class="btn-orange" class="btn-resa">S'inscrire</a></td>
                 <?php endforeach; ?>
             </tr>
-            </div>
 
+            </tbody></table>
 
     </section>
 
 
 </main>
-
 
 <?php require_once "layout/footer.php"; ?>
 

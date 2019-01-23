@@ -1,7 +1,7 @@
 <?php
 require_once '../../../model/database.php';
 
-$pays = getAllPays();
+$pays = getAllEntities("pays");
 
 $error_msg = null;
 if (isset($_GET['errcode'])) {
@@ -41,20 +41,20 @@ require_once '../../layout/header.php';
             <th>Titre</th>
             <th>Image</th>
             <th>Pays</th>
-            <th>Date de création</th>
-            <th class="actions">Actions</th>
+            <th>Action</th>
+<!--            <th class="actions">Actions</th>-->
         </tr>
     </thead>
     <tbody>
         <?php foreach ($pays as $pays) : ?>
             <tr>
-                <td><?php echo $pays['titre']; ?></td>
+                <td><?php echo $pays['libelle']; ?></td>
                 <td>
-                    <img src="../../../uploads/<?php echo $pays['image']; ?>" class="img-thumbnail">
+                    <img src="../../../uploads/<?php echo $pays['photo']; ?>" class="img-thumbnail">
                 </td>
-                <td><?php echo $pays['circuits']; ?></td>
-                <td><?php echo $pays['pseudo']; ?></td>
-                <td><?php echo $pays['date_creation_format']; ?></td>
+                <td><?php echo $pays['description']; ?></td>
+<!--                <td>--><?php //echo $pays['pseudo']; ?><!--</td>-->
+<!--                <td>--><?php //echo $pays['date_creation_format']; ?><!--</td>-->
                 <td class="actions">
                     <a href="update.php?id=<?php echo $pays['id']; ?>" class="btn btn-warning">
                         <i class="fa fa-edit"></i>

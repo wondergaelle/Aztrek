@@ -12,6 +12,6 @@ if ($error) {
     exit;
 }
 
-unlink("../../../uploads/" . $photo["image"]);
+unlink("../../../uploads/" . $image["image"]);
 
 header('Location: index.php');

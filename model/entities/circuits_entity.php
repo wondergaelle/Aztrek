@@ -1,6 +1,6 @@
 <?php
 
-//requete pour les sejours
+//requete pour circuits
 
 
 

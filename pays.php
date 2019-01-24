@@ -2,11 +2,14 @@
 require_once "model/database.php";
 require_once "functions.php";
 
+/* pour recuperer les donnees id utilisation de la variable superglobale get*/
 $id = $_GET["id"];
+
+/* fonction getOne get all ==> fonction générale déclarée dans database */
 $pays = getOneEntity("pays", $id);
 $sejours = getAllSejoursByPays($id);
 
-
+/* dans l'url fait apparaitre l'intitulé pays et l'id du pays */
 
 getHeader($pays["libelle"], $pays["description"]);
 
@@ -30,7 +33,7 @@ getHeader($pays["libelle"], $pays["description"]);
 
 <div class="infos">
 
-    <h1>L'amérique Centrale</h1>
+    <h1><?= $pays["libelle"]; ?></h1>
     <p>Voyagez autrement ...</p>
 </div>
 </header>
@@ -62,6 +65,8 @@ getHeader($pays["libelle"], $pays["description"]);
                 <?php foreach ($sejours as $sejour) : ?>
                     <div class="card">
                         <h4 class="card-title "><?= $sejour["libelle"]; ?></h4>
+                <!--/* Dans cet exemple le lien se fait avec " l'id sejour" utilisée dans l'URL
+                    puis ensuite récupérée via la variable $_GET['id'].*/ -->
 
                         <a href="circuit.php?id=<?= $sejour["id"]; ?>">
                             <img class="card-img-top" src="images/<?= $sejour["photo"]; ?>" alt=<?= $sejour["libelle"]; ?>>
@@ -75,7 +80,8 @@ getHeader($pays["libelle"], $pays["description"]);
                             <ul class="card-text card-footer niveau">
                                 <li><i class="fas fa-user-alt"></i><?= $sejour["accompany"]; ?></li>
                                 <ul class="niveau">
-
+                                    /* boucle for sur les niveaux par rapport aux sejours permet
+                                    d'incrémenter la variable */
                                     <li>Niveau
                                         <?php for ($i = 1; $i <= 3; $i++) : ?>
                                             <?php if ($i <= $sejour["niveau"]) : ?>

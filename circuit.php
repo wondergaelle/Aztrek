@@ -1,11 +1,18 @@
 <?php
 require_once "model/database.php";
 require_once "functions.php";
-
+/*permet tous les id */
 $id = $_GET["id"];
+
+/*declaration de la cariable pour recuperer l id d un sejour*/
 $sejour = getOneSejour($id);
+
+/*declaration de la cariable pour recuperer l id de tous les circuits par sejour*/
 $circuits = getAllCircuitsBySejours($id);
+
+/*declaration de la cariable pour recuperer l id de tous les departs  par circuit*/
 $departs = getAllDepartsByCircuit($id);
+
 
 
 getHeader($sejour["libelle"], $sejour["description"]);
@@ -29,6 +36,8 @@ getHeader($sejour["libelle"], $sejour["description"]);
 
 
     <div class="infos">
+
+
 
         <h1><?= $sejour["pays"]; ?></h1>
         <p>le trek à chaque pas</p>
@@ -59,7 +68,7 @@ getHeader($sejour["libelle"], $sejour["description"]);
 
     <section>
 
-        <div class="row mx-auto ">
+        <div class="row mx-auto container">
             <?php foreach ($circuits as $circuit) : ?>
 
                 <div class="col-sm-6 col-md-8  col-lg-6 mx-auto img-circuit">
@@ -88,7 +97,7 @@ getHeader($sejour["libelle"], $sejour["description"]);
 
     <section class="reservation">
 
-        <table class="table table-bordered col-sm-6 col-md-12 col-lg-12">
+        <table class="table table-bordered col-sm-4 col-md-12 col-lg-12">
             <thead>
             <tr>
                 <th scope="col">Circuit</th>

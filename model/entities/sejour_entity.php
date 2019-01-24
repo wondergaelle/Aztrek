@@ -5,7 +5,7 @@
 
 function getAllSejoursByPays (int $id) {
     global $connection;
-
+/* envoi de requete sql au serveur ==> script d envoi de requete et des objets associés*/
     $query = "
 
     SELECT
@@ -19,8 +19,12 @@ function getAllSejoursByPays (int $id) {
     ORDER BY sejours.libelle
     ";
 
+    /* execute la requete sql et retourne le nbre de lignes affectées */
     $stmt = $connection->prepare($query);
+    /*bindparam est liée en tant que référence et ne sera évaluée
+    qu'au moment de l'appel à la fonction excecute*/
     $stmt->bindParam(":id", $id);
+    /* execute une requete preparee */
     $stmt->execute();
 
     return $stmt->fetchAll();
@@ -49,22 +53,22 @@ function getOneSejour(int $id) {
     return $stmt->fetch();
 }
 
-function insertSejours(string $libelle, int $categorie_id, string $image, string $description, string $description_courte,  int $publie, int $utilisateur_id) {
+function insertSejours(string $libelle,   string $image, string $days, string $accompany, string $description) {
     global $connection;
 
     $query = "
-    INSERT INTO sejours (libelle, image, description, description_courte, couverts, temps_prepa, temps_cuisson, publie, date_creation, utilisateur_id, categorie_id) 
-    VALUES (:libelle, :image, :description, :description_courte, :publie, NOW(), :utilisateur_id, :categorie_id)
+    INSERT INTO sejours (libelle, photo , accompany,  days, description )
+    VALUES (libelle := libelle, photo := image,  accompany := accompany, days := days, description := description)
     ";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":libelle", $libelle);
     $stmt->bindParam(":image", $image);
+    $stmt->bindParam(":accompany", $accompany);
+    $stmt->bindParam(":days", $days);
     $stmt->bindParam(":description", $description);
-    $stmt->bindParam(":description_courte", $description_courte);
-    $stmt->bindParam(":publie", $publie);
-    $stmt->bindParam(":categorie_id", $categorie_id);
-    $stmt->bindParam(":utilisateur_id", $utilisateur_id);
     $stmt->execute();
 }
+
+
 

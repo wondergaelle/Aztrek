@@ -2,7 +2,7 @@
 
 // pour generer les categories dans la partie Admin ==> donc pas de ciblage d'id car libelle a creer
 
-function insertPays(string $libelle, string $description, string $image)
+function insertPays(string $libelle, string $image, string $description)
 {
     global $connection;
 
@@ -17,15 +17,18 @@ function insertPays(string $libelle, string $description, string $image)
 
 // Pour modifier les pays existants
 
-function updatePays(int $id, string $libelle)
+function updatePays(int $id, string $libelle, string $description, string $image)
 {
     global $connection;
 
-    $query = " UPDATE libelle, description, photo SET :libelle, :description, :image WHERE id = :id";
+    $query = "UPDATE pays SET libelle = :libelle, photo = :image, description = :description WHERE id = :id";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":id", $id);
+    $stmt->bindParam(":libelle", $libelle);
     $stmt->bindParam(":description", $description);
     $stmt->bindParam(":image", $image);
+
     $stmt->execute();
 }
+

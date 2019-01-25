@@ -1,4 +1,6 @@
 <?php
+/*les fichiers entity contiennt la liste
+des fonctions pour interagir avec les données*/
 
 function getAllDepartsByCircuit(int $id) {
     {

@@ -66,17 +66,6 @@ function deleteEntity(string $table, int $id){
     return null;
 }
 
-//
-//function updatePhoto(string $table, int $id) : array{
-//    global $connection;
-//
-//    $query = "SELECT * FROM $table WHERE id = :id";
-//    $stmt = $connection->prepare($query);
-//    $stmt->bindParam(":id", $id);
-//    $stmt->execute();
-//
-//    return $stmt->fetch();
-//}
 
 
 

@@ -4,6 +4,8 @@ require_once '../../../model/database.php';
 $sejours = getAllEntities("sejours");
 
 
+
+
 $error_msg = null;
 if (isset($_GET['errcode'])) {
     $errcode = $_GET['errcode'];
@@ -43,6 +45,9 @@ require_once '../../layout/header.php';
             <th>Sejour</th>
             <th>Image</th>
             <th>Difficulte</th>
+            <th>Accompagné</th>
+            <th>Durée</th>
+            <th>Description</th>
             <th>Pays</th>
             <th class="actions">Actions</th>
         </tr>
@@ -56,7 +61,6 @@ require_once '../../layout/header.php';
                 <img src="../../../uploads/<?php echo $sejour['photo']; ?>" class="img-thumbnail">
             </td>
             <td>
-
                 <select name="categorie_id" class="form-control">
                     <?php foreach ($sejour["niveau"] as $sejour["niveau"]) : ?>
                         <option value="<?php echo $sejour["id"]; ?>">
@@ -65,11 +69,12 @@ require_once '../../layout/header.php';
                     <?php endforeach; ?>
                 </select>
             </td>
-
-
+            <td><?php echo $sejour['accompany']; ?></td>
+            <td><?php echo $sejour['days']; ?> jours </td>
             <td><?php echo $sejour['description']; ?></td>
-            <!--                <td>--><?php //echo $pays['pseudo']; ?><!--</td>-->
-            <!--                <td>--><?php //echo $pays['date_creation_format']; ?><!--</td>-->
+            <td><?php echo $sejour['pays_id']; ?></td>
+
+
             <td class="actions">
                 <a href="update.php?id=<?php echo $sejour['id']; ?>" class="btn btn-warning">
                     <i class="fa fa-edit"></i>

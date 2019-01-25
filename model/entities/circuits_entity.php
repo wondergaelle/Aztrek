@@ -1,6 +1,9 @@
 <?php
 
-//requete pour circuits
+/*les fichiers entity contiennt la liste
+des fonctions pour interagir avec les données*/
+
+//fonctions pour circuits
 
 
 

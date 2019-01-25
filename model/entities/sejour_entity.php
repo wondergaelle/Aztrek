@@ -1,7 +1,9 @@
 <?php
 
+/*les fichiers entity contiennt la liste
+des fonctions pour interagir avec les données*/
 
-// Requete pour les sejours
+// fonctions pour les sejours
 
 function getAllSejoursByPays (int $id) {
     global $connection;
@@ -53,20 +55,22 @@ function getOneSejour(int $id) {
     return $stmt->fetch();
 }
 
-function insertSejours(string $libelle,   string $image, string $days, string $accompany, string $description) {
+function insertSejours(string $libelle, string $image, string $niveaux_id, string $accompany, string $days, string $description, string $pays_id) {
     global $connection;
 
     $query = "
-    INSERT INTO sejours (libelle, photo , accompany,  days, description )
-    VALUES (libelle := libelle, photo := image,  accompany := accompany, days := days, description := description)
+    INSERT INTO sejours (libelle, photo , niveaux_id, accompany,  days, description, pays_id )
+    VALUES (libelle := libelle, photo := image, niveaux_id :=niveaux_id,  accompany := accompany, days := days, description := description, pays_id := pays_id)
     ";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":libelle", $libelle);
     $stmt->bindParam(":image", $image);
+    $stmt->bindParam(":niveaux_id", $niveaux_id);
     $stmt->bindParam(":accompany", $accompany);
     $stmt->bindParam(":days", $days);
     $stmt->bindParam(":description", $description);
+    $stmt->bindParam(":pays_id", $pays_id);
     $stmt->execute();
 }
 

@@ -1,7 +1,9 @@
 <?php require_once '../../layout/header.php'; ?>
 
-    <h1>Ajout d'un Pays</h1>
 
+
+    <h1>Ajout d'un Pays</h1>
+<!--pour uploader des fichier attribut enctype="multipart/form-data-->
     <form action="create_query.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label>Nom du Pays</label>

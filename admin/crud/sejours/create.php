@@ -1,6 +1,14 @@
 <?php require_once
 
-$niveaux = getAllEntities("niveaux");
+
+/*$libelle = getOneEntities("libelle");
+$image = getOneEntities("image");
+$niveaux_id = getOneEntities("niveaux_id");
+$accompany = getOneEntities("accompany");
+$days = getOneEntities("days");
+$description = getOneEntities("description");
+$pays_id = getOneEntities("pays_id");*/
+
 
 
 '../../layout/header.php'; ?>
@@ -14,11 +22,11 @@ $niveaux = getAllEntities("niveaux");
     </div>
     <div class="form-group">
         <select name="difficulte_id" class="form-control">
-            <?php foreach ($niveaux as $niveau) : ?>
-                <option value="<?php echo $niveau["id"]; ?>">
-                    <?php echo $niveau["libelle"]; ?>
+                <?php foreach ($niveaux_id as $niveau_id) : ?>
+                <option value="<?php echo $niveau_id["id"]; ?>">
+                    <?php echo $niveau_id["libelle"]; ?>
                 </option>
-            <?php endforeach; ?>
+            <?php endforeach; ?>*/
         </select>
     </div>
     <div class="form-group">

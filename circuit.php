@@ -1,16 +1,16 @@
 <?php
 require_once "model/database.php";
 require_once "functions.php";
-/*permet tous les id */
+/*permet de recuperer tous les id */
 $id = $_GET["id"];
 
-/*declaration de la cariable pour recuperer l id d un sejour*/
+/*declaration de la variable pour recuperer l id d un sejour*/
 $sejour = getOneSejour($id);
 
-/*declaration de la cariable pour recuperer l id de tous les circuits par sejour*/
+/*declaration de la variable pour recuperer l id de tous les circuits par sejour*/
 $circuits = getAllCircuitsBySejours($id);
 
-/*declaration de la cariable pour recuperer l id de tous les departs  par circuit*/
+/*declaration de la variable pour recuperer l id de tous les departs  par circuit*/
 $departs = getAllDepartsByCircuit($id);
 
 

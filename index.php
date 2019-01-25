@@ -1,11 +1,9 @@
 <?php
-
 require_once "model/database.php";
-
-
 require_once "functions.php";
 
-//le get header suivant permet de nommer le lien en fonction de la page sur laquelle on se trouve
+//le get header suivant permet de nommer le lien en fonction
+// de la page sur laquelle on se trouve
 
 getHeader("Accueil", "sejour");
 
@@ -132,7 +130,7 @@ getHeader("Accueil", "sejour");
 
         </article>
 
-        <a href="pays.html" class="btn-grey"> Nos destinations</a>
+<!--        <a href="pays.html" class="btn-grey"> Nos destinations</a>-->
 
     </section>
     <section class="equipe">

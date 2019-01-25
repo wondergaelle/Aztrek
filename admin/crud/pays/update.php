@@ -2,6 +2,7 @@
 require_once '../../../model/database.php';
 
 $id = $_GET['id'];
+
 $pays = getOneEntity("pays", $id);
 
 

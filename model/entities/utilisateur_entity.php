@@ -1,7 +1,9 @@
 <?php
+/*les fichiers entity contiennt la liste
+des fonctions pour interagir avec les données*/
 
-
-// fonction pour se connecter a l'interface  avec email et mot de passe
+// fonction pour se connecter a l'interface
+//  avec email et mot de passe
 
 function getUtilisateurByEmailMotDePasse(string $email, string $password) {
     global $connection;

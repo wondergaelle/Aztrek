@@ -5,11 +5,12 @@ require_once '../../../model/database.php';
 
 $id = $_POST['id'];
 $libelle = $_POST['libelle'];
-$sejour = getOneEntity('sejour', $id);
-
+$image = $_POST['image'];
+$niveaux_id = $_POST['niveaux_id'];
+$accompany = $_POST['accompany'];
+$days = $_POST['days'];
 $description = $_POST['description'];
-//$categorie_id = $_POST['categorie_id'];
-//$tag_ids = isset($_POST['tag_ids']) ? $_POST['tag_ids'] : [];
+$pays_id = $_POST['pays_id'];
 
 // Upload de l'image
 if ($_FILES["image"]["error"] == 0) {

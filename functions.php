@@ -1,5 +1,6 @@
 <?php
-/* fichier permettant de declarer les fonctions qui vont ensuite servir dans les pages */
+/* fichier permettant de declarer
+les fonctions qui vont ensuite servir dans les pages */
 
 
 //fonction qui ameliore le print_r
